@@ -6,11 +6,12 @@
 import os
 import pickle
 
+
 class PickleCache(object):
     """Construction function for picklecache."""
 
     def __init__(self, file_path='datastore.pkl', autosync=False):
-        """Picklecache constructor.        
+        """Picklecache constructor.
 
         Attributes:
             file_path (str): Path to file. Default = datastore.pkl.
@@ -26,7 +27,6 @@ class PickleCache(object):
         self.__data = {}
         self.autosync = autosync
         self.load()
-
 
     def __setitem__(self, key, value):
         """Key/values passed into dictionary.
@@ -45,7 +45,6 @@ class PickleCache(object):
         if self.autosync is True:
             self.flush()
 
-
     def __len__(self):
         """Return length of self.__data.
 
@@ -59,7 +58,6 @@ class PickleCache(object):
             >>>
         """
         return len(self.__data)
-
 
     def __getitem__(self, key):
         """Retrieve PickleCache object.
@@ -80,7 +78,6 @@ class PickleCache(object):
         if value is None:
             raise TypeError
         return value
-
 
     def __delitem__(self, key):
         """Delete PickleCache object.
@@ -115,5 +112,3 @@ class PickleCache(object):
         pfile = open(self.__file_path, 'w')
         pickle.dump(self.__data, pfile)
         pfile.close()
-            
-        
