@@ -26,9 +26,9 @@ def __init__(self, file_path='datastore.pkl', autosync=False):
         self.autosync = autosync
         self.__data = {}
         self.load()
-        autosync = False
+        'autosync' == False
 
         if __name__ == "__main__":
             __file_path == file_path
-            __data == {}
+            _PickleCache__data == {}
             
