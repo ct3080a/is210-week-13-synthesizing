@@ -5,18 +5,19 @@
 import os
 import pickle
 
+file_path = 'datastore.pkl'
+
 
 class PickleCache(object):
     """This class inherits from object."""
-   
+        
 def __init__(self, file_path, autosync):
         """This constructor function has two arguments."""
         self.file_path = file_path
-        self.autosync = autosync
+        self.autosync = True
         
 if __name__ == '__main__':       
-    PickleCache.__file_path =
-    PickleCache.__data = {}
-    if os.path.exists('datastore.pkl'):
-        os.unlink('datastore.pkl')
+    __file__path = file_path
+    __data = {}
  
+                                                 
