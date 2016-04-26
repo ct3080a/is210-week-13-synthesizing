@@ -8,6 +8,10 @@ import pickle
 
 class PickleCache(object):
     """This class inherits from object."""
+    if __name__ == "__main__":
+            '_PickleCache__file_path' == "file_path"
+            '_PickleCache__data' == {}
+           
 
 def __init__(self, file_path='datastore.pkl', autosync=False):
         """This constructor function has two arguments.
@@ -23,12 +27,8 @@ def __init__(self, file_path='datastore.pkl', autosync=False):
            __data(dictionary): a set of key value pairs
         """
         self.__file_path = file_path
-        self.autosync = autosync
         self.__data = {}
         self.load()
-        'autosync' == False
+        autosync = self.autosync
 
-        if __name__ == "__main__":
-            __file_path == file_path
-            _PickleCache__data == {}
-            
+        
