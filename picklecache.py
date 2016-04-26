@@ -3,24 +3,26 @@
 """This module creates custom classes."""
 
 import os
-
-print os.path.dirname(os.path.abspath('file_path'))
 import pickle
-
-file_path = 'datastore.pkl'
 
 
 class PickleCache(object):
     """This class inherits from object."""
-        
-def __init__(self, file_path, autosync):
-        """This constructor function has two arguments."""
-        self.file_path = file_path
-        self.autosync = True
-        
-if __name__ == '__main__':       
-    __file__path = file_path
-    __data = {}
 
-a = self.assertTrue(PickleCache)
-print a                                               
+def __init__(self, file_path='datastore.pkl', autosync=False):
+        """This constructor function has two arguments.
+        Args:
+            file_path (string, optional): Defaults to datastore.pkl
+            autosync (bool, optional): Defaults to False
+
+        Attributes:
+            autosync(bool): creates an auto sync
+
+           __file__path(string): creates a string object
+
+           __data(dictionary): a set of key value pairs
+        """
+        self.__file_path = file_path
+        self.autosync = autosync
+        self.__data = {}
+        self.load()
