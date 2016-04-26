@@ -3,6 +3,8 @@
 """This module creates custom classes."""
 
 import os
+
+print os.path.dirname(os.path.abspath('file_path'))
 import pickle
 
 file_path = 'datastore.pkl'
@@ -19,5 +21,6 @@ def __init__(self, file_path, autosync):
 if __name__ == '__main__':       
     __file__path = file_path
     __data = {}
- 
-                                                 
+
+a = self.assertTrue(PickleCache)
+print a                                               
