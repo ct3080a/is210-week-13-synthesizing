@@ -3,6 +3,8 @@
 """This module uses I/O functions."""
 import os
 import pickle
+
+
 class PickleCache(object):
     """A class with two args."""
     def __init__(self, file_path='datastore.pkl', autosync=False):
@@ -19,6 +21,7 @@ class PickleCache(object):
         self.autosync = autosync
         self.__data = {}
         self.load()
+
     def __setitem__(self, key, value):
         """Creates storage for key and value pairs in dictionary. 
         Args:
@@ -28,9 +31,11 @@ class PickleCache(object):
         self.__data[key] = value
         if self.autosync is True:
             self.flush()
+
     def __len__(self):
         """Returns self._data length."""
         return len(self.__data)
+
     def __getitem__(self, key):
         """Retreives data from the class object.
         Args:
@@ -46,15 +51,15 @@ class PickleCache(object):
         del self.__data[key]
         if self.autosync is True:
             self.flush()
-            
+
     def load(self):
         """Opens and reads files."""
-        if os.path.exists(self.__file_path)is True and \
-                          os.path.getsize(self.__file_path) > 0:
+        if os.path.exists(self.__file_path)is True and os.path.getsize \
+            (self.__file_path) > 0:
             with open(self.__file_path, 'r') as fhd:
                 self.__data = pickle.load(fhd)
             fhd.close()
- 
+
     def flush(self):
         """Stores data."""
         with open(self.__file_path, 'w') as fhd:
