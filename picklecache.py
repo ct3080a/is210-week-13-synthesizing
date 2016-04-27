@@ -54,14 +54,12 @@ class PickleCache(object):
 
     def load(self):
         """Opens and reads files."""
-        if os.path.exists(self.__file_path)is True and os.path.getsize \
-            (self.__file_path) > 0:
-            with open(self.__file_path, 'r') as fhd:
-                self.__data = pickle.load(fhd)
-            fhd.close()
+        filehandler = open(self.__file_path, 'r') 
+        self.__data = pickle.load(filehandler)
+        filehandler.close()
 
     def flush(self):
         """Stores data."""
-        with open(self.__file_path, 'w') as fhd:
-            pickle.dump(self.__data, fhd)
-        fhd.close()
+        filehandler =  open(self.__file_path, 'w') 
+        pickle.dump(self.__data, filehandler)
+        filehandler.close()
