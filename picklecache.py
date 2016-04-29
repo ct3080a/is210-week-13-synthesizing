@@ -5,6 +5,7 @@
 import os
 import pickle
 
+
 class PickleCache(object):
     """A picklecache class."""
 
@@ -71,4 +72,3 @@ class PickleCache(object):
         with open(self.__file_path, 'w') as fhd:
             pickle.dump(self.__data, fhd)
         fhd.close()
-             
