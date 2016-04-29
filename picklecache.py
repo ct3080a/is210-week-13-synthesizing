@@ -64,11 +64,11 @@ class PickleCache(object):
            os.path.getsize(self.__file_path) > 0:
             with open(self.__file_path, 'r') as fhd:
                 self.__data = pickle.load(fhd)
-                fhd.close()
+            fhd.close()
 
     def flush(self):
         """Saves and manages files."""
         with open(self.__file_path, 'w') as fhd:
-            pickle.dump(self.__data. fhd)
+            pickle.dump(self.__data, fhd)
         fhd.close()
              
