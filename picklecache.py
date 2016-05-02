@@ -9,7 +9,7 @@ import pickle
 class PickleCache(object):
     """Defines the PickleCache class"""
 
-    def __init__(self, file_path='datastore.pk1', autosync=False):
+    def __init__(self, file_path='datastore.pkl', autosync=False):
         """Creates a constructor for the PickleCache class.
 
         Args:
@@ -26,7 +26,7 @@ class PickleCache(object):
         self.autosync = autosync
         self.load()
 
-    def __setitem(self, key, value):
+    def __setitem__(self, key, value):
         """Defines a function tp store key and value pairs.
 
         Args:
